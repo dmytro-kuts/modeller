@@ -6,13 +6,15 @@
 	"private": true,
 	"license": "",
 	"type": "module",
+	"homepage": "https://dmytro-kuts.github.io/modeller/",
 	"scripts": {
 		"start": "npm i --legacy-peer-deps",
 		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
 		"build": "gulp build --build --nowebp",
 		"sprite": "gulp sprite",
 		"fonts": "gulp fonts --rewrite",
-		"deploy": "gulp deployFTP --build",
+		"deploy": "gh-pages -d dist",
+		"predeploy": "npm run build",
 		"zip": "gulp deployZIP --build",
 		"devbuild": "gulp build --build",
 		"tmp": "gulp -f gulpfile.tmp.js",
@@ -72,6 +74,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"gh-pages": "^5.0.0",
 		"gulp-cheerio": "^1.0.0",
 		"isotope-layout": "^3.0.6",
 		"simplebar": "latest"
