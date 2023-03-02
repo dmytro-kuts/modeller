@@ -1,0 +1,43 @@
+/* the-course  ====================================================================================================*/
+.the-course {
+  @extend %bgSection;
+  @include adaptiveValue('padding-top', 120, 40);
+  @include adaptiveValue('padding-bottom', 80, 20);
+  // .the-course__container
+  &__container {
+  }
+  // .the-course__title
+  &__title {
+    @extend %slide-in-bottom-50;
+    margin-bottom: em(48, 48);
+  }
+  // .the-course__columns
+  &__columns {
+    display: flex;
+    @include adaptiveValue("gap", 50,40 );
+    @media (max-width: em(648)){
+        flex-direction: column;
+    }
+  }
+  // .the-course__steps
+  &__steps {
+    padding: rem(0);
+    flex: 0 1 50%;
+    h3 {
+      &:not(:last-child) {
+        margin-bottom: rem(32);
+      }
+    }
+  }
+  // .the-course__body
+  &__body {
+    flex: 0 1 50%;
+    h3 {
+      &:not(:last-child) {
+        margin-bottom: rem(32);
+      }
+    }
+  }
+}
+/* the-course  ====================================================================================================*/
+//========================================================================================================================================================

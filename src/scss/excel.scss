@@ -1,0 +1,189 @@
+/* items-block  ====================================================================================================*/
+.items-block {
+  @extend %bgSection;
+  @include adaptiveValue('padding-top', 88, 20);
+  @include adaptiveValue('padding-bottom', 80, 20);
+  // .items-block__container
+  &__container {
+  }
+  // .items-block__column
+  &__column {
+    display: grid;
+    @include adaptiveValue('gap', 48, 20);
+    @media (min-width: em(1187)) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(260), 1fr));
+    }
+    @media (max-width: em(1187)) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(340), 1fr));
+    }
+    @media (max-width: em(575)) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(260), 1fr));
+    }
+  }
+  // .items-block__item
+  &__item {
+    @extend %slide-in-bottom-25;
+  }
+}
+.block-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  @include adaptiveValue('padding', 24, 18);
+  background-color: $whiteColor;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05), 4px 16px 24px rgba(0, 0, 0, 0.05);
+  // .block-item__icon
+  &__icon {
+    width: rem(32);
+    height: rem(32);
+    margin-bottom: rem(8);
+  }
+  // .block-item__title
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: em(8, 24);
+    }
+  }
+  // .block-item__text
+  &__text {
+  }
+}
+/* items-block  ====================================================================================================*/
+//========================================================================================================================================================
+/* what-learn-excel  ====================================================================================================*/
+.what-learn-excel {
+  @extend %bgSection;
+  @include adaptiveValue('padding-top', 120, 40);
+  @include adaptiveValue('padding-bottom', 80, 40);
+  // .what-learn-excel__container
+  &__container {
+  }
+  // .what-learn-excel__title
+  &__title {
+    @extend %slide-in-bottom-50;
+    margin-bottom: em(48, 48);
+  }
+  // .what-learn-excel__rows
+  &__rows {
+    display: grid;
+    @include adaptiveValue('gap', 48, 20);
+  }
+  // .what-learn-excel__modelling
+  &__modelling {
+    display: grid;
+    @include adaptiveValue('gap', 48, 20);
+    @media (min-width:em(890)){
+      grid-template-columns: 40% 1fr ;/* 495/1240 */
+    }
+  }
+  // .what-learn-excel__excel
+  &__excel {
+    display: grid;
+    
+    @include adaptiveValue('gap', 48, 20);
+    @media (min-width:em(890)){
+      grid-template-columns: 40% 1fr ;/* 495/1240 */
+    }
+  }
+}
+.modelling-learn {
+  // .modelling-learn__images
+  &__images {
+  }
+  // .modelling-learn__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.body-column {
+  // .body-column__title
+  &__title {
+  }
+  // .body-column__list
+  &__list {
+  }
+  // .body-column__item
+  &__item {
+  }
+}
+.excel-learn {
+  // .excel-learn__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  // .excel-learn__image-ibg
+  &__image-ibg {
+    transform: translate(20%, 20%);
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    &._watcher-view {
+      transform: translate(0px, 0);
+      opacity: 1;
+      transition: all 0.8s ease 0.1s;
+    }
+    padding-bottom: 51.294498%; /* 317/618 */
+    @media (max-width: em(890)) {
+      &:last-child {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+  }
+
+}
+.image-modelling {
+  @media (min-width: em(890)) {
+    max-height: rem(564);
+    display: grid;
+    // .images-learning__item
+    &__item-ibg {
+      // .images-learning__item_top
+      &_top {
+        filter: grayscale(100%);
+        margin-left: rem(108);
+        img {
+          border-bottom: 24px solid $whiteColor;
+          border-left: 24px solid $whiteColor;
+        }
+        padding-bottom: 78.510638%; /* 369/470 */
+        z-index: 2;
+        transform: translate(0, 18%);
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+        &._watcher-view {
+          transform: translate(0px, 0);
+          opacity: 1;
+          transition: all 0.8s ease 0.1s;
+        }
+      }
+      // .images-learning__item_top
+      &_bottom {
+        padding-bottom: 54.255319%; /* 255/470 */
+        img{
+          object-fit: contain
+        }
+        @include adaptiveValue('margin-right', 122, 24, 0, 1270, 992);
+        @media (max-width: em(1270)) {
+          margin-left: rem(-15);
+        }
+        transform: translate(0, 0);
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+        &._watcher-view {
+          transform: translate(0, -36%);
+          opacity: 1;
+          transition: all 0.8s ease 0.1s;
+        }
+      }
+    }
+  }
+  @media (max-width: em(890)) {
+    display: none;
+  }
+}
+/* what-learn-excel  ====================================================================================================*/
+//========================================================================================================================================================

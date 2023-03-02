@@ -1,0 +1,808 @@
+/* =========================== Заголовки, загальні БЕМ блоки та інше... ===============================
+=======================================================================================================*/
+.page {
+  padding-top: rem(64);
+  // .page__main
+  &__main {
+  }
+  // .page__learning
+  &__learning {
+  }
+  // .page__connect
+  &__connect {
+  }
+  // .page__companies
+  &__companies {
+  }
+  // .page__community
+  &__community {
+  }
+  // .page__certificate
+  &__certificate {
+  }
+  // .page__member
+  &__member {
+  }
+  // .page__stories
+  &__stories {
+  }
+  // .page__team
+  &__team {
+  }
+  // .page__courses
+  &__courses {
+  }
+  // .page__blog
+  &__blog {
+
+  }
+  // .page__contact
+  &__contact {
+  }
+  // .page__training
+  &__training {
+  }
+  // .page__why
+  &__why {
+  }
+  // .page__actions
+  &__actions {
+  }
+  // .page__learn
+  &__learn {
+  }
+  // .page__training
+  &__programme {
+  }
+  // .page__sessions
+  &__sessions {
+  }
+  // .ready-form__form
+  &__form {
+  }
+  // .page__how
+  &__how {
+  }
+  // .page__what-learn
+  &__what-learn {
+  }
+  // .page__how-it-work
+  &__how-it-work {
+  }
+  // .page__about
+  &__about {
+  }
+  // .page__the-course
+  &__the-course {
+  }
+  // .page__items-block
+  &__items-block {
+  }
+  // .page__what-learn-excel
+  &__what-learn-excel {
+  }
+}
+//========================================================================================================
+.title {
+  font-family: 'GTAmerica';
+  font-weight: 700;
+  @include adaptiveValue('font-size', 48, 30);
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+.small-title {
+  // font-family: 'GTAmerica';
+  font-weight: 700;
+  @include adaptiveValue('font-size', 24, 20);
+  line-height: 140%;
+  letter-spacing: 0.01em;
+}
+.text {
+  @include adaptiveValue('font-size', 18, 16);
+  color: $greyColor;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+}
+.small-text {
+  color: $greyColor;
+  font-size: rem(16);
+  line-height: 150%;
+  letter-spacing: 0.01em;
+}
+.link {
+  color: $blueColor;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  position: relative;
+  &::after {
+    content: '';
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: rem(0);
+    left: rem(0);
+    height: rem(2);
+    background-color: $blueColor;
+    width: 0;
+    transition: width 0.5s ease 0s;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+      }
+    }
+  }
+}
+/* buttons  ====================================================================================================*/
+.button {
+  display: inline-block;
+  font-family: 'GTAmerica';
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  padding: rem(10.5) rem(16.5);
+  background-color: $blueColor;
+  transition: all 0.3s ease 0s;
+  text-align: center;
+  white-space: nowrap;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $sebiLightBlueColor;
+    }
+  }
+  &:active {
+    background-color: #072fbd;
+  }
+  &:disabled {
+    background-color: #a9baf4;
+    pointer-events: none;
+  }
+  &_join {
+    @include adaptiveValue('min-width', 280, 100, 0, 1240, 1000);
+    @media (max-width: $mobile) {
+      min-width: 280px;
+      background-color: $lightBlueColor;
+      color: $mainColor;
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: #e1e8f0;
+        }
+      }
+      &:active {
+        background-color: #f7f9ff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04), 0px 2px 2px rgba(0, 0, 0, 0.05);
+      }
+      &:disabled {
+        color: #cfd4da;
+        background-color: #f7f9ff;
+        pointer-events: none;
+      }
+    }
+    @media (max-width: $mobileSmall) {
+      min-width: 100%;
+    }
+  }
+  &_transparent {
+    background-color: inherit;
+    padding: rem(10.5) rem(0);
+    color: $blueColor;
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: none;
+        background-color: inherit;
+        color: $sebiLightBlueColor;
+      }
+    }
+    &:active {
+      color: #072fbd;
+      background-color: inherit;
+    }
+    &:disabled {
+      color: #a9baf4;
+      background-color: inherit;
+      pointer-events: none;
+    }
+  }
+  // .button_contact
+  &_contact {
+    @media (min-width: $mobile) {
+      width: 50%;
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+  &_notcontact {
+    width: 100%;
+  }
+
+}
+.btn {
+  &_hidden {
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+  &_hed {
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+}
+/* buttons  ====================================================================================================*/
+//========================================================================================================================================================
+/*hero-block ====================================================================================================*/
+.hero-block {
+  @include adaptiveValue('padding-top', 100, 20);
+  @include adaptiveValue('padding-bottom', 56, 20);
+
+  // ..hero-block__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: rem(350);
+      height: rem(350);
+      top: 36%;
+      right: -16%;
+      background-color: rgba(247, 249, 252, 0.9);
+      z-index: -1;
+      transform: rotate(40deg);
+    }
+    @media (max-width: em(1270)) {
+      margin-left: rem(-15);
+      margin-right: rem(-15);
+    }
+  }
+  // ..hero-block__title
+  &__title {
+    @extend %slide-in-bottom-50;
+    margin-bottom: rem(8);
+    @media (max-width: em(1240)) {
+      margin-left: rem(15);
+      margin-right: rem(15);
+    }
+  }
+  // ..hero-block__sub-text
+  &__sub-text {
+    @extend %slide-in-bottom-100;
+    color: #7d8897;
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+    @media (max-width: em(1240)) {
+      margin-left: rem(15);
+      margin-right: rem(15);
+    }
+  }
+  // ..hero-block__sub-title
+  &__sub-title {
+    @extend %slide-in-bottom-50;
+    &:not(:last-child) {
+      margin-bottom: rem(32);
+    }
+    @media (max-width: em(1240)) {
+      margin-left: rem(15);
+      margin-right: rem(15);
+    }
+  }
+  // ..hero-block__image-ibg
+  &__image-ibg {
+    @extend %slide-in-bottom-25;
+    min-width: 100%;
+    padding-bottom: 29.354839%; /* 364/1240 */
+    &:not(:last-child) {
+      margin-bottom: rem(32);
+    }
+  }
+  // ..hero-block__text
+  &__text {
+    @extend %slide-in-bottom-50;
+    color: $greyColor;
+    font-family: 'GTAmerica';
+    font-weight: 700;
+    @include adaptiveValue('font-size', 32, 18);
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    @media (max-width: em(1240)) {
+      margin-left: rem(15);
+      margin-right: rem(15);
+    }
+    &:not(:last-child) {
+      margin-bottom: em(48, 32);
+    }
+  }
+  // .hero-block__column
+  &__column {
+  }
+  // .hero-block__item
+  &__item {
+  }
+}
+.item-hero {
+  // .item-hero__icon
+  &__icon {
+  }
+  // .item-hero__title
+  &__title {
+  }
+  // .item-hero__text
+  &__text {
+  }
+}
+/*hero-block ====================================================================================================*/
+//========================================================================================================================================================
+/* Forms  ====================================================================================================*/
+.body-form {
+  overflow: hidden;
+  background-color: $greyColor;
+  z-index: -2;
+  // .ready-form__container
+  &__container {
+    @include adaptiveValue('padding-top', 100, 20);
+    @include adaptiveValue('padding-bottom', 100, 20);
+  }
+  // .ready-form__body
+  &__body {
+    display: grid;
+    justify-items: center;
+    color: $whiteColor;
+    gap: rem(8);
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: rem(349);
+      height: rem(349);
+      bottom: -44%;
+      right: -20%;
+      background-color: rgba(247, 249, 252, 0.11);
+      z-index: 1;
+      transform: rotate(40deg);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: rem(473);
+      height: rem(473);
+      top: -16%;
+      left: -12%;
+      background-color: rgba(247, 249, 252, 0.11);
+      z-index: 1;
+      transform: rotate(40deg);
+    }
+  }
+  // .ready-form__title
+  &__title {
+    @extend %slide-in-bottom-25;
+  }
+  // .ready-form__text
+  &__text {
+    @extend %slide-in-bottom-25;
+    color: $whiteColor;
+    text-align: center;
+    margin-bottom: rem(24);
+  }
+  // .ready-form__form
+  &__form {
+  }
+}
+.form {
+  display: grid;
+  gap: rem(24);
+  z-index: 10;
+  @media (min-width: em(850)) {
+    width: rem(820);
+  }
+  @media (max-width: em(850)) {
+    width: 100%;
+  }
+  // .form__item
+  &__item {
+    display: grid;
+    gap: rem(4);
+    position: relative;
+    z-index: 5;
+    label {
+      font-size: rem(16);
+      line-height: 150%;
+      letter-spacing: 0.01em;
+    }
+    ._sending &{
+      label {
+        color: #CFD4DA;
+      }
+    }
+  }
+  &__error {
+    color: $errorColor;
+    position: absolute;
+    height: 100%;
+    bottom: -104%;
+    left: 0;
+    font-size: rem(10);
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  // .form__input
+  &__input {
+    font-size: 16px;
+    line-height: 150%;
+    @include adaptiveValue('min-height', 48, 20);
+    @include adaptiveValue('padding-top', 16, 10);
+    @include adaptiveValue('padding-bottom', 16, 10);
+    @include adaptiveValue('padding-right', 16, 10);
+    @include adaptiveValue('padding-left', 16, 10);
+    transition: all 0.3s ease 0s;
+    background-color: $lightBlueColor;
+    border: 1px solid $lightBlueColor;
+    position: relative;
+    
+    &._form-focus  {
+      border: 1px solid $blueColor;
+    }
+    &._form-error {
+      border: 1px solid $errorColor;
+      background-color: #ffecec;
+    }
+    ._sending &{
+      color: #CFD4DA;
+      background-color:  #F7F9FF;
+      border: 1px solid  #CFD4DA;
+    }
+    // .form__input_name
+    &_name {
+    }
+    // .form__input_email
+    &_email {
+    }
+    // .form__input_phone
+    &_phone {
+    }
+    // .form__input_phone
+    &_job-title {
+    }
+    // .form__input_phone
+    &_company-name {
+    }
+    // .form__input_question
+    &_question {
+      min-height: rem(105);
+      resize: none;
+      overflow: auto;
+    }
+  }
+  // .form__column
+  &__column {
+    display: grid;
+    gap: rem(24);
+    @media (min-width: rem(800)) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(260), 1fr));
+    }
+  }
+  // .form__actions
+  &__actions {
+    position: relative;
+    z-index: 10;
+  }
+  // .form__button
+  &__button {
+    ._sending &{
+      display: none;
+    }
+  }
+  // .form__succes
+  &__succes {
+    display: none;
+    ._sending &{
+      display: flex;
+      align-items: center;
+      color: #11B017;
+      font-weight: 600;
+      font-size: rem(16);
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      &::before{
+        margin-right: rem(6);
+      }
+    }
+  }
+}
+/*Forms ====================================================================================================*/
+//========================================================================================================================================================
+/*about ====================================================================================================*/
+.about {
+  overflow: hidden;
+  @extend %bgSection;
+  @include adaptiveValue('padding-top', 120, 40);
+  @include adaptiveValue('padding-bottom', 80, 20);
+  // .about__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: rem(430);
+      height: rem(430);
+      bottom: -20%;
+      right: -8%;
+      background-color: rgb(248, 250, 252, 0.9);
+      z-index: -1;
+      transform: rotate(40deg);
+    }
+  }
+  // .about__title
+  &__title {
+    @extend %slide-in-bottom-50;
+    margin-bottom: em(48, 48);
+    text-align: left;
+  }
+  // .about__columns
+  &__columns {
+    display: grid;
+    gap: rem(36);
+    @media (min-width: $mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 80, 40);
+    }
+  }
+  // .about__content
+  &__content {
+  }
+  // .about__image-ibg
+  &__image-ibg {
+    @extend %slide-in-bottom-25;
+    padding-bottom: 49.342105%; /* 300/608 */
+  }
+  &__image {
+    &_left {
+      @media (max-width: $mobile) {
+        grid-row-start: 2;
+      }
+    }
+  }
+  &__button {
+    @extend %slide-in-bottom-50;
+    align-self: center;
+    text-align: center;
+    @media (min-width: $mobile) {
+      width: rem(356);
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+}
+.content-about {
+  @media (min-width: $mobile) {
+    padding: rem(24) rem(0);
+  }
+  // .content-about__title
+  &__title {
+    @extend %slide-in-bottom-25;
+    font-family: 'GTAmerica';
+    font-weight: 700;
+    @include adaptiveValue('font-size', 32, 26);
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+  }
+  // .content-about__text
+  &__text {
+    p {
+      transform: translate(0%, 100%);
+      opacity: 0;
+      transition: all 0.3s ease 0s;
+      &:not(:last-child) {
+        @include adaptiveValue('margin-bottom', 32, 20);
+      }
+    }
+    ._watcher-view & {
+      p {
+        transform: translate(0px, 0px);
+        opacity: 1;
+        @for $var from 1 to 4 {
+          $delay: $var * 0.2;
+          &:nth-child(#{$var}) {
+            @if $var==1 {
+              transition: all 0.8s ease 0.2s;
+            } @else {
+              transition: all 0.8s ease #{$delay + s};
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*about ====================================================================================================*/
+//========================================================================================================================================================
+/*why ====================================================================================================*/
+.why {
+  @include adaptiveValue('padding-top', 80, 20);
+  @include adaptiveValue('padding-bottom', 80, 20);
+  // .why__container
+  &__container {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: rem(635);
+      height: rem(635);
+      top: 8%;
+      right: -20%;
+      background-color: rgb(248, 250, 252, 0.9);
+      z-index: -1;
+      transform: rotate(40deg);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: rem(332);
+      height: rem(332);
+      bottom: 2%;
+      left: -4%;
+      background-color: rgb(248, 250, 252, 0.9);
+      z-index: -1;
+      transform: rotate(40deg);
+    }
+  }
+  // .why__title
+  &__title {
+    @extend %slide-in-bottom-100;
+    margin-bottom: em(48, 48);
+  }
+  // .why__items
+  &__items {
+    display: grid;
+    gap: rem(24);
+    align-content: stretch;
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+    }
+    @media (max-width: $mobileSmall) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
+    }
+  }
+  // .why__column
+  &__column {
+  }
+  // .why__item
+  &__item {
+    @extend %slide-in-bottom-25;
+    @media (max-width: em(853,)) {
+      &:last-child {
+        grid-column: 1;
+        grid-row: 3;
+      }
+    }
+    // .why__item_orange
+    &_orange {
+      background-color: $orangeColor;
+    }
+    // .why__item_grey
+    &_grey {
+      background-color: $greyColor;
+    }
+  }
+}
+.item-why {
+  color: $whiteColor;
+  padding: rem(24);
+  gap: rem(16);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  // .item-why__icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(88);
+    height: rem(88);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  // .item-why__title
+  &__title {
+  }
+  // .item-why__text
+  &__text {
+    color: $whiteColor;
+  }
+}
+/*why ====================================================================================================*/
+/* =========================== Заголовки, загальні БЕМ блоки та інше... ===============================
+=======================================================================================================*/
+
+/* =========================== Анімації ===============================
+=======================================================================*/
+//? animation slide-in-bottom-100
+%slide-in-bottom-100 {
+  transform: translate(0px, 100%);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+  &._watcher-view {
+    transform: translate(0px, 0);
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+  }
+}
+//? animation slide-in-bottom-50
+%slide-in-bottom-50 {
+  transform: translate(0px, 50%);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+  &._watcher-view {
+    transform: translate(0px, 0);
+    opacity: 1;
+    transition: all 0.8s ease 0.1s;
+  }
+}
+//? animation slide-in-bottom-25
+%slide-in-bottom-25 {
+  transform: translate(0px, 25%);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+  &._watcher-view {
+    transform: translate(0px, 0);
+    opacity: 1;
+    transition: all 0.8s ease 0.1s;
+  }
+}
+//? animation slide-in-right
+%slide-in-right {
+  transform: translate(100%, 70%);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+  &._watcher-view {
+    transform: translate(0px, 0);
+    opacity: 1;
+    transition: all 0.8s ease 0.1s;
+  }
+}
+//? animation slide-in-right-list
+%slide-in-right-list {
+  li {
+    transform: translate(120%, 0);
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+  ._watcher-view & {
+    li {
+      transform: translate(0px, 0);
+      opacity: 1;
+      @for $var from 1 to 16 {
+        $delay: $var * 0.2;
+        &:nth-child(#{$var}) {
+          @if $var==1 {
+            transition: all 0.8s ease 0s;
+          } @else {
+            transition: all 0.8s ease #{$delay + s};
+          }
+        }
+      }
+    }
+  }
+}
+/* =========================== Заголовки, загальні БЕМ блоки та інше... ===============================
+=======================================================================================================*/
