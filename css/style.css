@@ -2161,6 +2161,11 @@ body::after {
   margin-bottom: 0.5rem;
 }
 
+.header-stories__name {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 .header-stories__position {
   font-size: 1.25rem;
   width: 100%;
