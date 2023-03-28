@@ -203,32 +203,28 @@
             <div class="body-form__body">
               <h2 class="body-form__title title" data-watch>Ready to transform your finance team?</h2>
               <h3 class="body-form__text text" data-watch>Request your demo and free team trial today</h3>
-              <form data-ajax data-dev class="body-form__form form" action="#" method="POST">
+              <form class="body-form__form form" data-form action="#" method="POST">
                 <div class="form__item">
                   <label for="input_name">Your Name</label>
-                  <input id="input_name" type="text" name="form[]" oninput="this.value=this.value.replace(/[^a-zA-Z]/g,'')" data-required data-error="you must enter your name" class="form__input form__input_name">
+                  <span class="form__error"></span>
+                  <input id="input_name" type="text" name="form[name]" data-required data-error="you must enter your name" class="form__input form__input_name">
                 </div>
                 <div class="form__column">
                   <div class="form__item">
                     <label for="input_email">Your Email</label>
-                    <input id="input_email" type="text" name="form[email]" data-required="email" data-error="you must enter your email" class="form__input form__input_email">
+                    <span class="form__error"></span>
+                    <input id="input_email" type="email" name="form[email]" data-required data-error="you must enter your email" class="form__input form__input_email">
                   </div>
                   <div class="form__item">
                     <label for="input_phone">Your Phone (optional)</label>
-                    <input id="input_phone" type="tel" name="form[]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" data-error="you must enter your email" class="form__input  form__input_phone">
+                    <span class="form__error"></span>
+                    <input id="input_phone" type="tel" name="form[tel]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" data-optional data-error="you must enter your email" class="form__input  form__input_phone">
                   </div>
                 </div>
-                <div  class="form__item">
+                <div class="form__item">
                   <label for="input_question">Your Question or Request</label>
-                  <textarea
-                    id="input_question"
-                    data-validata
-                    data-required
-                    name="message"
-                    data-error="please, enter a specific question or request"
-                    id="formMessage"
-                    class="form__input form__input_question"
-                  ></textarea>
+                  <span class="form__error"></span>
+                  <textarea id="input_question" type="text" name="form[message]" data-required data-error="please, enter a specific question or request" class="form__input form__input_question"></textarea>
                 </div>
                 <div class="form__actions">
                   <button type="submit" class="form__button button button_notcontact">Submit</button>

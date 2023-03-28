@@ -420,7 +420,7 @@
       line-height: 150%;
       letter-spacing: 0.01em;
     }
-    ._sending &{
+    ._success &{
       label {
         color: #CFD4DA;
       }
@@ -450,14 +450,14 @@
     border: 1px solid $lightBlueColor;
     position: relative;
     
-    &._form-focus  {
+    &:focus  {
       border: 1px solid $blueColor;
     }
     &._form-error {
       border: 1px solid $errorColor;
       background-color: #ffecec;
     }
-    ._sending &{
+    ._success &{
       color: #CFD4DA;
       background-color:  #F7F9FF;
       border: 1px solid  #CFD4DA;
@@ -499,18 +499,25 @@
   }
   // .form__button
   &__button {
-    ._sending &{
+    background-color: #A9BAF4;
+    pointer-events: none;
+    &._active{
+      background-color: #072fbd;
+      pointer-events: auto;
+    }
+    ._success &{
       display: none;
     }
   }
   // .form__succes
   &__succes {
     display: none;
-    ._sending &{
+    ._success &{
       display: flex;
       align-items: center;
       color: #11B017;
       font-weight: 600;
+      padding: rem(11);
       font-size: rem(16);
       line-height: 150%;
       letter-spacing: 0.01em;

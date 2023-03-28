@@ -896,33 +896,29 @@
               </div>
               <div class="contact__content">
                 <h2 class="contact__title title" data-watch>Contact Us</h2>
-                <form data-ajax data-dev class="contact__form" action="#" method="POST">
+                <form class="contact__form " data-form action="#" method="POST">
                   <div class="form__item">
                     <label for="input_name">Your Name</label>
-                    <input id="input_name" type="text" oninput="this.value=this.value.replace(/[^a-zA-Z]/g,'')" name="form[name]" data-required data-error="you must enter your name" class="form__input form__input_name">
+                    <span class="form__error"></span>
+                    <input id="input_name" type="text" name="form[name]" data-required data-error="you must enter your name" class="form__input form__input_name">
                   </div>
-                    <div class="form__item">
-                      <label for="input_email">Your Email</label>
-                      <input id="input_email" type="text" name="form[email]" data-required="email" data-error="you must enter your email" class="form__input form__input_email">
-                    </div>
-                    <div class="form__item">
-                      <label for="input_phone" >Your Phone (optional)</label>
-                      <input id="input_phone" type="tel" name="form[tel]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')"  data-error="Please, enter the correct phone number" class="form__input  form__input_phone">
-                    </div>
-                  <div  class="form__item">
-                    <label for="input_question" >Your Question or Request</label>
-                    <textarea
-                      id="input_question"
-                      data-validata
-                      data-required
-                      name="form[message]"
-                      data-error="please, enter a specific question or request"
-                      id="formMessage"
-                      class="form__input form__input_question"
-                    ></textarea>
+                  <div class="form__item">
+                    <label for="input_email">Your Email</label>
+                    <span class="form__error"></span>
+                    <input id="input_email" type="email" name="form[email]" data-required data-error="you must enter your email" class="form__input form__input_email">
+                  </div>
+                  <div class="form__item">
+                    <label for="input_phone">Your Phone (optional)</label>
+                    <span class="form__error"></span>
+                    <input id="input_phone" type="tel" name="form[tel]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" data-optional data-error="you must enter your email" class="form__input  form__input_phone">
+                  </div>
+                  <div class="form__item">
+                    <label for="input_question">Your Question or Request</label>
+                    <span class="form__error"></span>
+                    <textarea id="input_question" type="text" name="form[message]" data-required data-error="please, enter a specific question or request" class="form__input form__input_question"></textarea>
                   </div>
                   <div class="form__actions">
-                    <button type="submit" class="form__button button button_contact">Submit</button>
+                    <button type="submit" class="form__button button button_contact " >Submit</button>
                     <span class="form__succes _icon-succes">Your Request has been sent! We will call you soon.</span>
                   </div>
                 </form>

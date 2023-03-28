@@ -72,7 +72,10 @@
                   <div class="image-modelling__item-ibg image-modelling__item-ibg_top" data-watch>
                     <img data-src="@img/section/what-learn-excel/giles-male.jpg" alt="Giles_Male" />
                   </div>
-                  <div class="image-modelling__item-ibg image-modelling__item-ibg_bottom" data-watch>
+                  <div
+                    class="image-modelling__item-ibg image-modelling__item-ibg_bottom"
+                    data-watch
+                  >
                     <img data-src="@img/section/what-learn-excel/excel.jpg" alt="Excel" />
                   </div>
                 </div>
@@ -185,7 +188,7 @@
               <div class="about__columns">
                 <div class="about__content content-about" data-watch>
                   <h3 class="content-about__title" data-watch>Myles Arnott</h3>
-                  <div class="content-about__text text" >
+                  <div class="content-about__text text">
                     <p>
                       Myles is a CIMA qualified accountant and has spent much of his career as a
                       data analyst, project manager and business analyst.
@@ -234,20 +237,14 @@
               <h3 class="body-form__text text" data-watch>
                 Submit your details below to register your interest
               </h3>
-              <form
-                data-ajax
-                data-dev
-                class="body-form__form form"
-                action="#"
-                method="POST"
-              >
+              <form class="body-form__form form" data-form action="#" method="POST">
                 <div class="form__item">
                   <label for="input_name">Your Name</label>
+                  <span class="form__error"></span>
                   <input
-                    oninput="this.value=this.value.replace(/[^a-zA-Z]/g,'')"
                     id="input_name"
                     type="text"
-                    name="form[]"
+                    name="form[name]"
                     data-required
                     data-error="you must enter your name"
                     class="form__input form__input_name"
@@ -256,52 +253,44 @@
                 <div class="form__column">
                   <div class="form__item">
                     <label for="input_email">Your Email</label>
-                    <input
-                      id="input_email"
-                      type="text"
-                      name="form[email]"
-                      data-required="email"
-                      data-error="you must enter your email"
-                      class="form__input form__input_email"
-                    />
+                    <span class="form__error"></span>
+                    <input id="input_email" type="email" name="form[email]" data-required data-error="you must enter your email" class="form__input form__input_email">
                   </div>
                   <div class="form__item">
                     <label for="input_phone">Your Phone (optional)</label>
-                    <input
-                      oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')"
-                      id="input_phone"
-                      type="tel"
-                      name="form[]"
-                      data-error=""
-                      class="form__input form__input_phone"
-                    />
+                    <span class="form__error"></span>
+                    <input id="input_phone" type="tel" name="form[tel]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" data-optional data-error="you must enter your email" class="form__input  form__input_phone">
                   </div>
                 </div>
                 <div class="form__column">
                   <div class="form__item">
                     <label for="input_job-title">Your Job Title (optional)</label>
                     <input
+                      data-optional
                       id="input_job-title"
                       type="text"
-                      name="form[]"
-                      data-error=""
+                      name="form[job]"
                       class="form__input form__input_input_job-title"
                     />
                   </div>
                   <div class="form__item">
                     <label for="input_company-name">Your Company Name (optional)</label>
                     <input
+                      data-optional
                       id="input_company-name"
                       type="text"
-                      name="form[]"
-                      data-error=""
+                      name="form[company]"
                       class="form__input form__input_company-name"
                     />
                   </div>
                 </div>
                 <div class="form__actions">
-                  <button type="submit" class="form__button button button_notcontact">Submit</button>
-                  <span class="form__succes _icon-succes">Your Request has been sent! We will call you soon.</span>
+                  <button type="submit" class="form__button button button_notcontact">
+                    Submit
+                  </button>
+                  <span class="form__succes _icon-succes"
+                    >Your Request has been sent! We will call you soon.</span
+                  >
                 </div>
               </form>
             </div>

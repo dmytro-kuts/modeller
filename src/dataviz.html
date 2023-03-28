@@ -202,34 +202,20 @@
               <h2 class="body-form__title title" data-watch>Ready to transform your finance team?</h2>
               <h3 class="body-form__text text" data-watch>Request your demo and free team trial today</h3>
               <form
-                data-ajax
-                data-dev
+                data-form
                 class="body-form__form form"
                 action="#"
                 method="POST"
               >
                 <div class="form__item">
                   <label for="input_name">Your Name</label>
-                  <input
-                    oninput="this.value=this.value.replace(/[^a-zA-Z]/g,'')"
-                    id="input_name"
-                    type="text"
-                    name="form[]"
-                    data-required
-                    data-error="you must enter your name"
-                    class="form__input form__input_name"
-                  />
+                  <span class="form__error"></span>
+                  <input id="input_name" type="text" name="form[name]" data-required data-error="you must enter your name" class="form__input form__input_name">
                 </div>
                 <div class="form__item">
                   <label for="input_email">Your Email</label>
-                  <input
-                    id="input_email"
-                    type="text"
-                    name="form[email]"
-                    data-required="email"
-                    data-error="you must enter your email"
-                    class="form__input form__input_email"
-                  />
+                  <span class="form__error"></span>
+                  <input id="input_email" type="email" name="form[email]" data-required data-error="you must enter your email" class="form__input form__input_email">
                 </div>
                 <div class="form__column">
                   <div class="form__item">
@@ -237,8 +223,7 @@
                     <input
                       id="input_job-title"
                       type="text"
-                      name="form[]"
-                      data-error=""
+                      name="form[job]"
                       class="form__input form__input_input_job-title"
                     />
                   </div>
@@ -247,8 +232,7 @@
                     <input
                       id="input_company-name"
                       type="text"
-                      name="form[]"
-                      data-error=""
+                      name="form[company]"
                       class="form__input form__input_company-name"
                     />
                   </div>
