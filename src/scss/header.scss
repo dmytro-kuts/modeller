@@ -226,7 +226,8 @@ body::after {
       flex: 1 1 100%;
       border: 1px solid #cfd4da;
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05), 4px 16px 24px rgba(0, 0, 0, 0.05);
-      padding: rem(16);
+      padding-top: rem(16);
+      padding-bottom: rem(16);
       margin-top: rem(4);
       white-space: nowrap;
       top: 100%;
@@ -261,6 +262,7 @@ body::after {
   // .menu__sub-item
 
   &__sub-item {
+    position: relative;
     @media (max-width: $mobile) {
       text-align: center;
       padding: rem(18);
@@ -268,32 +270,10 @@ body::after {
       border-top: 0.5px solid rgba(60, 60, 67, 0.36);
     }
     @media (min-width: $mobile) {
-      margin-top: rem(10.5);
-      padding-bottom: rem(8);
+      padding-top: rem(10.5);
+      padding-bottom: rem(10.5);
     }
-    @media (any-hover: hover) {
-      position: relative;
-      width: fit-content;
-      &::after {
-        content: '';
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        bottom: rem(0);
-        left: rem(0);
-        height: rem(4);
-        width: 0;
-        background-color: $orangeColor;
-        transition: width 0.5s ease 0s;
-      }
-      &:hover {
-        &::after {
-          opacity: 1;
-          visibility: visible;
-          width: 100%;
-        }
-      }
-    }
+
   }
 
   // .menu__sub-link
@@ -302,12 +282,34 @@ body::after {
     @media (min-width: $mobile) {
       line-height: 150%;
       letter-spacing: 0.01em;
+      width: 100%;
     }
     @media (max-width: $mobile) {
       font-size: rem(20);
       line-height: math.div(25, 20);
       letter-spacing: 0.38px;
       color: #007aff;
+    }
+    @media (min-width: $mobile) {
+      padding-left: rem(16);
+      padding-right: rem(16);
+    }
+    @media (any-hover: hover) {
+      &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: background-color 0.3s ease 0s;
+        z-index: -1;
+      }
+      &:hover {
+        &::after {
+          background-color: #A9BAF4;
+        }
+      }
     }
   }
 }

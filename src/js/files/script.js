@@ -39,7 +39,7 @@ window.onload = function () {
 =======================================================================================================*/
 /* ==============================================================================================
 =============================  Form  ============================================================*/
-window.onload = function () {
+window.addEventListener('click', () => {
   const form = document.querySelector('[data-form]');
   const nameInput = document.querySelector('#input_name');
   const emailInput = document.querySelector('#input_email');
@@ -148,7 +148,7 @@ window.onload = function () {
         form.classList.add('_error');
       });
   });
-};
+});
 //====================================================================
 // window.addEventListener('load', () => {
 //   const form = document.querySelector('[data-form]');

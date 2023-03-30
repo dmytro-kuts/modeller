@@ -34,7 +34,6 @@
   }
   // .page__blog
   &__blog {
-
   }
   // .page__contact
   &__contact {
@@ -81,6 +80,13 @@
   // .page__what-learn-excel
   &__what-learn-excel {
   }
+  // .page__events
+  &__events {
+  }
+  // .page__newsletter
+  &__newsletter {
+    @include adaptiveValue('padding-top', 80, 20);
+  }
 }
 //========================================================================================================
 .title {
@@ -116,6 +122,10 @@
   line-height: 150%;
   letter-spacing: 0.01em;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+  max-width: fit-content;
   &::after {
     content: '';
     opacity: 0;
@@ -222,7 +232,6 @@
   &_notcontact {
     width: 100%;
   }
-
 }
 .btn {
   &_hidden {
@@ -420,9 +429,9 @@
       line-height: 150%;
       letter-spacing: 0.01em;
     }
-    ._success &{
+    ._success & {
       label {
-        color: #CFD4DA;
+        color: #cfd4da;
       }
     }
   }
@@ -449,18 +458,18 @@
     background-color: $lightBlueColor;
     border: 1px solid $lightBlueColor;
     position: relative;
-    
-    &:focus  {
+
+    &:focus {
       border: 1px solid $blueColor;
     }
     &._form-error {
       border: 1px solid $errorColor;
       background-color: #ffecec;
     }
-    ._success &{
-      color: #CFD4DA;
-      background-color:  #F7F9FF;
-      border: 1px solid  #CFD4DA;
+    ._success & {
+      color: #cfd4da;
+      background-color: #f7f9ff;
+      border: 1px solid #cfd4da;
     }
     // .form__input_name
     &_name {
@@ -499,29 +508,29 @@
   }
   // .form__button
   &__button {
-    background-color: #A9BAF4;
+    background-color: #a9baf4;
     pointer-events: none;
-    &._active{
+    &._active {
       background-color: #072fbd;
       pointer-events: auto;
     }
-    ._success &{
+    ._success & {
       display: none;
     }
   }
   // .form__succes
   &__succes {
     display: none;
-    ._success &{
+    ._success & {
       display: flex;
       align-items: center;
-      color: #11B017;
+      color: #11b017;
       font-weight: 600;
       padding: rem(11);
       font-size: rem(16);
       line-height: 150%;
       letter-spacing: 0.01em;
-      &::before{
+      &::before {
         margin-right: rem(6);
       }
     }
