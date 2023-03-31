@@ -1,9 +1,24 @@
 .assessment-block {
-  background-color: #0b1727;
+  &_orange{
+    background-color: $orangeColor;
+  }
+  &_black{
+    background-color: #0b1727;
+  }
+  min-width: 100%;
+  
   @include adaptiveValue('padding', 56, 20);
   margin-bottom: rem(32);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+  }
   // .assessment-block__title
   &__title {
+    // text-align: center;
     color: $whiteColor;
     font-weight: 700;
     @include adaptiveValue('font-size', 32, 24);
@@ -12,6 +27,7 @@
   }
   // .assessment-block__text
   &__text {
+    // text-align: center;
     color: #7d8897;
     font-size: rem(20);
     @include adaptiveValue('font-size', 20, 16);
@@ -19,9 +35,13 @@
     &:not(:last-child) {
       margin-bottom: em(24, 20);
     }
+    &_white{
+      color: $whiteColor;
+    }
   }
   // .assessment-block__button
   &__button {
+    align-self: center;
   }
 }
 //========================================================================================================================================================

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"Frequently Asked Questions" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <section class="page__team-training hero-block">
+          <div class="hero-block__container">
+            <h1 class="hero-block__title title" data-watch>
+              Frequently Asked Questions
+            </h1>
+            <div class="hero-block__sub-title text" data-watch>
+              <p>
+                Everything you need to know.
+              </p>
+            </div>
+            <div class="hero-block__image-ibg" data-watch data-watch-once>
+              <img
+                src="@img/section/faq/image.jpg"
+                alt="Frequently Asked Questions"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="page__search">
+          <div class="ім'я блоку__container">
+            
+          </div>
+        </section>
+
+
+        <section class="page__full-reports-form body-form">
+          <div class="body-form__container">
+            <div class="body-form__body">
+              <h2 class="body-form__title title" data-watch>Still have questions?</h2>
+              <h3 class="body-form__text text" data-watch>
+                Contact us and we will be happy to clarify everything you have in mind!
+              </h3>
+              <form data-form class="body-form__form form" action="#" method="POST">
+                <div class="form__item">
+                  <label for="input_name">Your Name</label>
+                  <span class="form__error"></span>
+                  <input
+                    id="input_name"
+                    type="text"
+                    name="form[name]"
+                    data-required
+                    data-error="you must enter your name"
+                    class="form__input form__input_name"
+                  />
+                </div>
+                <div class="form__column">
+                  <div class="form__item">
+                    <label for="input_email">Your Email</label>
+                    <span class="form__error"></span>
+                    <input
+                      id="input_email"
+                      type="email"
+                      name="form[email]"
+                      data-required
+                      data-error="you must enter your email"
+                      class="form__input form__input_email"
+                    />
+                  </div>
+                  <div class="form__item">
+                    <label for="input_phone">Your Phone (optional)</label>
+                    <span class="form__error"></span>
+                    <input id="input_phone" type="tel" name="form[tel]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" data-optional data-error="you must enter your email" class="form__input  form__input_phone">
+                  </div>
+                </div>
+                <div class="form__column">
+                  <div class="form__item">
+                    <label for="input_job-title">Your Job Title (optional)</label>
+                    <input
+                      id="input_job-title"
+                      type="text"
+                      name="form[job]"
+                      class="form__input form__input_input_job-title"
+                    />
+                  </div>
+                  <div class="form__item">
+                    <label for="input_company-name">Your Company Name (optional)</label>
+                    <input
+                      id="input_company-name"
+                      type="text"
+                      name="form[company]"
+                      class="form__input form__input_company-name"
+                    />
+                  </div>
+                </div>
+                <div class="form__actions">
+                  <button type="submit" class="form__button button button_notcontact">
+                    Submit
+                  </button>
+                  <span class="form__succes _icon-succes"
+                    >Your Request has been sent! We will call you soon.</span
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

@@ -441,10 +441,12 @@
 .steps-connect {
   @media (min-width: $tablet) {
     padding-top: rem(44);
+
   }
   @media (max-width: $tablet) {
     padding-top: rem(64);
   }
+
   // .steps-connect__item
   &__item {
     @extend %slide-in-right;
@@ -470,6 +472,14 @@
     padding: rem(16);
     background-color: $orangeColor;
     align-self: start;
+    span {
+      font-weight: 700;
+      @include adaptiveValue('font-size', 48, 30);
+      line-height: 130%;
+      letter-spacing: 0.01em;
+      text-align: center;
+      color: $whiteColor;
+    }
   }
   // .steps-connect__body
   &__body {
@@ -481,6 +491,11 @@
   }
   // .steps-connect__text
   &__text {
+    ul{
+      li{
+
+      }
+    }
   }
 }
 /*connect ====================================================================================================*/

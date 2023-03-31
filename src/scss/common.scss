@@ -97,6 +97,13 @@
   letter-spacing: 0.01em;
   text-align: center;
 }
+.medium-title {
+  font-weight: 700;
+  @include adaptiveValue('font-size', 32, 20);
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  margin-bottom: rem(20);
+}
 .small-title {
   // font-family: 'GTAmerica';
   font-weight: 700;
@@ -251,7 +258,9 @@
 .hero-block {
   @include adaptiveValue('padding-top', 100, 20);
   @include adaptiveValue('padding-bottom', 56, 20);
-
+  &_non-top {
+    padding-top: rem(0);
+  }
   // ..hero-block__container
   &__container {
     display: flex;
@@ -273,6 +282,29 @@
     @media (max-width: em(1270)) {
       margin-left: rem(-15);
       margin-right: rem(-15);
+    }
+  }
+  // ..hero-block__title
+  &__link {
+    color: $blueColor;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    align-self: start;
+    @include adaptiveValue('margin-bottom', 42, 20);
+    display: flex;
+    align-items: center;
+    gap: rem(14);
+    &::before {
+      font-weight: 700;
+      transition: transform 0.3s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          transform: translate(4px, 0px);
+        }
+      }
     }
   }
   // ..hero-block__title
@@ -593,6 +625,9 @@
         grid-row-start: 2;
       }
     }
+    &_big {
+      padding-bottom: 70.998415%; /* 448/631 */
+    }
   }
   &__button {
     @extend %slide-in-bottom-50;
@@ -632,8 +667,29 @@
         @include adaptiveValue('margin-bottom', 32, 20);
       }
     }
+    li {
+      position: relative;
+      // transform: translate(0%, 100%);
+      // opacity: 0;
+      padding-left: rem(20);
+      transition: all 0.3s ease 0s;
+      &::after {
+        content: '';
+        position: absolute;
+        width: rem(4);
+        height: rem(4);
+        top: em(13, 18);
+        left: em(6, 18);
+        border-radius: 50%;
+        background-color: $mainColor;
+      }
+      &:not(:last-child) {
+        @include adaptiveValue('margin-bottom', 32, 20);
+      }
+    }
     ._watcher-view & {
-      p {
+      p,
+      li {
         transform: translate(0px, 0px);
         opacity: 1;
         @for $var from 1 to 4 {
@@ -747,6 +803,22 @@
   }
 }
 /*why ====================================================================================================*/
+.illustration {
+  @media (min-width: $tablet) {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: rem(415);
+      height: rem(415);
+      bottom: -16%;
+      right: 29%;
+      background-color: rgba(237, 244, 251, 0.9);
+      z-index: -1;
+      transform: rotate(40deg);
+    }
+  }
+}
 /* =========================== Заголовки, загальні БЕМ блоки та інше... ===============================
 =======================================================================================================*/
 
