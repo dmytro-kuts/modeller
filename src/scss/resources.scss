@@ -115,6 +115,13 @@
       img {
         transform: scale(1.02);
       }
+      span{
+        &::after {
+          opacity: 1;
+          visibility: visible;
+          width: 100%;
+        }
+      }
     }
   }
   // .item-blog__image-ibg
