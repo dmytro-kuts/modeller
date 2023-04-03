@@ -9,29 +9,45 @@
   &__columns {
     display: grid;
     gap: rem(24);
+    transform: translate(0px, rem(100));
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    &._watcher-view {
+      transform: translate(0px, 0);
+      opacity: 1;
+      transition: all 0.8s ease 0.1s;
+    }
     @media (min-width: $mobile) {
-      grid-template-columns: repeat(auto-fit, minmax(rem(352), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(rem(352), 1fr));
     }
     @media (max-width: $mobileSmall) {
       grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
     }
+    
   }
   // .events__item
   &__item {
     background-color: $whiteColor;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05), 4px 16px 24px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    transition: box-shadow 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
     @media (any-hover: hover) {
       &:hover {
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08), 4px 16px 24px rgba(0, 0, 0, 0.1);
+        img {
+          transform: scale(1.02);
+        }
       }
     }
 
   }
 }
 .item-events {
+  &__image-body {
+    position: relative;
+  }
   &__image-ibg {
+    overflow: hidden;
     padding-bottom: 100%;
     &::before {
       content: '';

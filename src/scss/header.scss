@@ -1,23 +1,5 @@
 /* ===========================================================================================================
 ============================== Header =========================================================================*/
-body::after {
-  content: '';
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.8s ease 0s;
-  pointer-events: none;
-  z-index: 49;
-}
-@media (max-width: $mobile) {
-  .menu-open body::after {
-    opacity: 1;
-  }
-}
 .header {
   // .header__top
   &__top {
@@ -27,8 +9,26 @@ body::after {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 48;
+    z-index: 50;
     background: $whiteColor;
+    @media (max-width: $mobile) {
+      &::after {
+        content: '';
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.8s ease 0s;
+        pointer-events: none;
+        z-index: 49;
+        .menu-open & {
+          opacity: 1;
+        }
+      }
+    }
   }
   // .header__bottom
   &__bottom {
@@ -43,30 +43,41 @@ body::after {
       width: 100%;
       z-index: 50;
       background: $whiteColor;
-      &__container {
-      }
+      overflow: auto;
     }
   }
   // .header__container
   &__container {
     display: flex;
     align-items: center;
-    gap: rem(35);
+    gap: rem(20);
   }
   // .header__logo
   &__logo {
-    margin-right: rem(15);
-    img {
-      max-width: 100%;
-      height: rem(46);
+    @include adaptiveValue('margin-right', 40, 0, 0, 1240, 800);
+    @media (max-width: em(396)) {
+      width: rem(34);
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: rem(47);
+        background-color: #fff;
+      }
     }
-    @media (max-width: em(767)) {
+    img {
+      height: rem(47);
+    }
+    @media (max-width: em(767.98)) {
       flex: 1 1 auto;
     }
   }
   // .header__menu
   &__menu {
-    @media (min-width: em(767)) {
+    @media (min-width: em(767.98)) {
       flex: 1 1 auto;
     }
   }
@@ -75,27 +86,146 @@ body::after {
     display: flex;
     align-items: center;
     gap: rem(24);
+    z-index: 50;
   }
-  // .header__button
+}
+.actions-header {
+  // .actions-header__item
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    &._hover {
+      .actions-header__sub-list {
+        transition: transform 0.4s ease 0s;
+        transform: translate(0px, 0px);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      span {
+        &::before {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        .actions-header__sub-list {
+          transition: transform 0.4s ease 0s;
+          transform: translate(0px, 0px);
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+        span {
+          &::before {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    &_log {
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+  // .actions-header__button
   &__button {
-    @media (max-width:$mobile){
-        
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 15%;
+    // margin-bottom: rem(-4);
+
+    span {
+      &:first-child {
+        border-right: 1px solid $whiteColor;
+      }
+      &::before {
+        margin-left: rem(16.5);
+        font-size: rem(14);
+        transition: transform 0.3s ease 0s;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  // .actions-header__sub-list
+  &__sub-list {
+    @include adaptiveValue('min-width', 280, 240, 0, 1240, 1000);
+    overflow: hidden;
+    background-color: $whiteColor;
+    z-index: 50;
+    position: absolute;
+    transition: opacity 0.5s ease 0s;
+    border: 1px solid #cfd4da;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05), 4px 16px 24px rgba(0, 0, 0, 0.05);
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+    margin-top: rem(-2);
+    white-space: nowrap;
+    top: 100%;
+    left: rem(0);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(0px, 15%);
+  }
+  // .actions-header__sub-item
+  &__sub-item {
+    position: relative;
+    padding-top: rem(10.5);
+    padding-bottom: rem(10.5);
+    &_log {
+      @media (min-width: $tablet) {
+        display: none;
+      }
+    }
+    a {
+      min-width: 100%;
+      text-align: left;
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      min-width: 100%;
+      padding-left: rem(16);
+      padding-right: rem(16);
+      @media (any-hover: hover) {
+        &::after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          transition: background-color 0.3s ease 0s;
+          z-index: -1;
+        }
+        &:hover {
+          &::after {
+            background-color: #a9baf4;
+          }
+        }
+      }
     }
   }
 }
 .menu {
   // .menu__body
   &__body {
+    @media (max-width: $mobile) {
+      overflow: auto;
+    }
   }
   // .menu__list
   &__list {
     display: flex;
     flex-wrap: wrap;
-    @include adaptiveValue('column-gap', 31, 16, 0, 1240, 767);
-    row-gap: rem(5);
+    @include adaptiveValue('column-gap', 30, 12, 0, 1240, 800);
     @media (max-width: $mobile) {
       justify-content: space-evenly;
     }
+    
   }
   // .menu__item
   &__item {
@@ -117,6 +247,7 @@ body::after {
           visibility: visible;
           width: 100%;
         }
+
         ._icon-arrow-down {
           &::before {
             transform: rotate(-180deg);
@@ -173,7 +304,7 @@ body::after {
     align-items: center;
     line-height: 150%;
     letter-spacing: 0.01em;
-    @include adaptiveValue("font-size", 18, 16,0,360,320);
+    @include adaptiveValue('font-size', 18, 16, 0, 360, 320);
     @media (min-width: $mobile) {
       flex-direction: row-reverse;
       padding-bottom: rem(10.5);
@@ -211,14 +342,14 @@ body::after {
   }
   // .menu__sub-list
   &__sub-list {
-    overflow: hidden;
+    overflow: auto;
     background-color: $whiteColor;
     z-index: 50;
     span {
       font-size: rem(14);
-      line-height: math.div(18 , 13);
+      line-height: math.div(18, 13);
       color: rgba(60, 60, 67, 0.6);
-      padding: rem(12) ;
+      padding: rem(12);
     }
     @media (min-width: $mobile) {
       position: absolute;
@@ -273,16 +404,14 @@ body::after {
       padding-top: rem(10.5);
       padding-bottom: rem(10.5);
     }
-
   }
-
   // .menu__sub-link
-
   &__sub-link {
+    min-width: 100%;
     @media (min-width: $mobile) {
       line-height: 150%;
       letter-spacing: 0.01em;
-      width: 100%;
+      min-width: 100%;
     }
     @media (max-width: $mobile) {
       font-size: rem(20);
@@ -307,7 +436,7 @@ body::after {
       }
       &:hover {
         &::after {
-          background-color: #A9BAF4;
+          background-color: #a9baf4;
         }
       }
     }

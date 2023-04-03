@@ -60,9 +60,20 @@
           </ul>
         </nav>
       </div>
-      <div class="header__actions">
-        <a href="#" class="header__button btn_hed button button_join">Join Us</a>
-        <button type="button" class="header__button button button_transparent">Log In</button>
+      <div class="header__actions actions-header">
+        <div class="actions-header__item">
+          <button type="button" class="actions-header__button button button_join">
+            <span>Join Us</span> <span class="_icon-arrow_left"></span>
+          </button>
+          <ul class="actions-header__sub-list">
+            <li class="actions-header__sub-item"><a href="#">Individual Membership</a></li>
+            <li class="actions-header__sub-item"><a href="#">Team Membership</a></li>
+            <li class="actions-header__sub-item actions-header__sub-item_log"></li>
+          </ul>
+        </div>
+        <div class="actions-header__item actions-header__item_log">
+          <a href="#" data-da=".actions-header__sub-item_log,992" class="actions-header__btn button button_transparent">Log In</a>
+        </div>
       </div>
     </div>
   </div>

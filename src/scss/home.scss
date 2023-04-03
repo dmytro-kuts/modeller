@@ -1163,9 +1163,12 @@
       align-items: flex-start;
       font-weight: 700;
       @include adaptiveValue('font-size', 34, 24);
-      line-height: 150%;
+      line-height: 140%;
       letter-spacing: 0.01em;
       color: $orangeColor;
+    }
+    p {
+      line-height: 140%;
     }
   }
   // .header-stories__location
@@ -1392,6 +1395,7 @@
   justify-content: space-between;
   margin-top: rem(24);
   margin-bottom: rem(12);
+  gap: rem(20);
   // .price-courses__value
 
   &__value {
@@ -1402,9 +1406,6 @@
     padding: rem(3.5) rem(16);
     border-radius: rem(100);
     background-color: $lightOrangeColor;
-    &_none {
-      background-color: inherit;
-    }
   }
 
   // .price-courses__deadline
@@ -1518,8 +1519,8 @@
   // .tabs-blog__body
   &__body {
   }
-  // .tabs-blog__colunms
-  &__colunms {
+  // .tabs-blog__columns
+  &__columns {
     display: flex;
     gap: rem(26);
     @media (max-width: $tablet) {
