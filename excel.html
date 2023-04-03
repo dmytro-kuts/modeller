@@ -5,7 +5,7 @@
 	<title>Excel Mastery</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20230317181034" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230403043735" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -74,9 +74,20 @@
 							</ul>
 						</nav>
 					</div>
-					<div class="header__actions">
-						<a href="#" class="header__button btn_hed button button_join">Join Us</a>
-						<button type="button" class="header__button button button_transparent">Log In</button>
+					<div class="header__actions actions-header">
+						<div class="actions-header__item">
+							<button type="button" class="actions-header__button button button_join">
+								<span>Join Us</span> <span class="_icon-arrow_left"></span>
+							</button>
+							<ul class="actions-header__sub-list">
+								<li class="actions-header__sub-item"><a href="#">Individual Membership</a></li>
+								<li class="actions-header__sub-item"><a href="#">Team Membership</a></li>
+								<li class="actions-header__sub-item actions-header__sub-item_log"></li>
+							</ul>
+						</div>
+						<div class="actions-header__item actions-header__item_log">
+							<a href="#" data-da=".actions-header__sub-item_log,992" class="actions-header__btn button button_transparent">Log In</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -313,33 +324,38 @@
 						<h3 class="body-form__text text" data-watch>
 							Submit your details below to register your interest
 						</h3>
-						<form data-ajax data-dev class="body-form__form form" action="#" method="POST">
+						<form class="body-form__form form" data-form action="#" method="POST">
 							<div class="form__item">
 								<label for="input_name">Your Name</label>
-								<input oninput="this.value=this.value.replace(/[^a-zA-Z]/g,'')" id="input_name" type="text" name="form[]" data-required data-error="you must enter your name" class="form__input form__input_name" />
+								<span class="form__error"></span>
+								<input id="input_name" type="text" name="form[name]" data-required data-error="you must enter your name" class="form__input form__input_name" />
 							</div>
 							<div class="form__column">
 								<div class="form__item">
 									<label for="input_email">Your Email</label>
-									<input id="input_email" type="text" name="form[email]" data-required="email" data-error="you must enter your email" class="form__input form__input_email" />
+									<span class="form__error"></span>
+									<input id="input_email" type="email" name="form[email]" data-required data-error="you must enter your email" class="form__input form__input_email">
 								</div>
 								<div class="form__item">
 									<label for="input_phone">Your Phone (optional)</label>
-									<input oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" id="input_phone" type="tel" name="form[]" data-error="" class="form__input form__input_phone" />
+									<span class="form__error"></span>
+									<input id="input_phone" type="tel" name="form[tel]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" data-optional data-error="you must enter your email" class="form__input  form__input_phone">
 								</div>
 							</div>
 							<div class="form__column">
 								<div class="form__item">
 									<label for="input_job-title">Your Job Title (optional)</label>
-									<input id="input_job-title" type="text" name="form[]" data-error="" class="form__input form__input_input_job-title" />
+									<input data-optional id="input_job-title" type="text" name="form[job]" class="form__input form__input_input_job-title" />
 								</div>
 								<div class="form__item">
 									<label for="input_company-name">Your Company Name (optional)</label>
-									<input id="input_company-name" type="text" name="form[]" data-error="" class="form__input form__input_company-name" />
+									<input data-optional id="input_company-name" type="text" name="form[company]" class="form__input form__input_company-name" />
 								</div>
 							</div>
 							<div class="form__actions">
-								<button type="submit" class="form__button button button_notcontact">Submit</button>
+								<button type="submit" class="form__button button button_notcontact">
+									Submit
+								</button>
 								<span class="form__succes _icon-succes">Your Request has been sent! We will call you soon.</span>
 							</div>
 						</form>
@@ -392,7 +408,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20230317181034"></script>
+	<script src="js/app.min.js?_v=20230403043735"></script>
 </body>
 
 </html>

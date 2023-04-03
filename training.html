@@ -5,7 +5,7 @@
 	<title>Training</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20230317181034" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230403043735" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -74,9 +74,20 @@
 							</ul>
 						</nav>
 					</div>
-					<div class="header__actions">
-						<a href="#" class="header__button btn_hed button button_join">Join Us</a>
-						<button type="button" class="header__button button button_transparent">Log In</button>
+					<div class="header__actions actions-header">
+						<div class="actions-header__item">
+							<button type="button" class="actions-header__button button button_join">
+								<span>Join Us</span> <span class="_icon-arrow_left"></span>
+							</button>
+							<ul class="actions-header__sub-list">
+								<li class="actions-header__sub-item"><a href="#">Individual Membership</a></li>
+								<li class="actions-header__sub-item"><a href="#">Team Membership</a></li>
+								<li class="actions-header__sub-item actions-header__sub-item_log"></li>
+							</ul>
+						</div>
+						<div class="actions-header__item actions-header__item_log">
+							<a href="#" data-da=".actions-header__sub-item_log,992" class="actions-header__btn button button_transparent">Log In</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -108,7 +119,9 @@
 					</div>
 					<div class="training__modelling training-column training-column_2">
 						<div class="training-column__body body-column" data-watch>
-							<h2 class="body-column__title small-title" data-watch>Advanced Financial Modelling</h2>
+							<h2 class="body-column__title small-title" data-watch>
+								Advanced Financial Modelling
+							</h2>
 							<ul class="body-column__list">
 								<li class="body-column__item">Advanced productivity tools</li>
 								<li class="body-column__item">Recap of core modelling skills</li>
@@ -130,7 +143,9 @@
 							<img data-src="img/section/training/data-visualisation-analytics.png" alt="Training_Programme" />
 						</div>
 						<div class="training-column__body body-column" data-watch>
-							<h2 class="body-column__title small-title" data-watch>Data Visualisation & Analytics</h2>
+							<h2 class="body-column__title small-title" data-watch>
+								Data Visualisation & Analytics
+							</h2>
 							<ul class="body-column__list">
 								<li class="body-column__item">Data visualisation fundamentals</li>
 								<li class="body-column__item">Design guidelines for tables and charts</li>
@@ -229,9 +244,7 @@
 			</section>
 			<section class="page__team team">
 				<div class="team__container">
-					<h2 class="team__title title" data-watch>
-						Our Team
-					</h2>
+					<h2 class="team__title title" data-watch>Our Team</h2>
 					<div class="team__slider swiper" data-watch data-watch-once>
 						<div class="team__wrapper swiper-wrapper">
 							<div class="team__slide swiper-slide">
@@ -341,9 +354,7 @@
 							</div>
 						</article>
 						<article class="courses__item item-courses" data-watch data-watch-margin="5%">
-							<h3 class="item-courses__title small-title">
-								Fundamentals of FAST Modelling
-							</h3>
+							<h3 class="item-courses__title small-title">Fundamentals of FAST Modelling</h3>
 							<div class="item-courses__body courses-item">
 								<div class="courses-item__text text">
 									<p>
@@ -367,7 +378,7 @@
 									<p>Rethink how you build models in Excel</p>
 								</div>
 								<div class="courses-item__price price-courses">
-									<div class="price-courses__value price-courses__value_none"></div>
+									<div class="price-courses__value">ON REQUEST</div>
 									<div class="price-courses__deadline">Live, Virtual Training</div>
 								</div>
 								<a href="#" class="courses-item__button button">Find Out More</a>
@@ -378,9 +389,7 @@
 			</section>
 			<section class="page__member member">
 				<div class="member__container">
-					<h2 class="member__title title" data-watch>
-						Become A Full Stack Member
-					</h2>
+					<h2 class="member__title title" data-watch>Become A Full Stack Member</h2>
 					<div class="member__columns">
 						<article class="member__body member-body" data-watch data-watch-margin="5%">
 							<div class="member-body__header">
@@ -496,7 +505,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20230317181034"></script>
+	<script src="js/app.min.js?_v=20230403043735"></script>
 </body>
 
 </html>

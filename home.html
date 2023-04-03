@@ -5,7 +5,7 @@
 	<title>HomePage</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20230317181034" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230403043735" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -74,9 +74,20 @@
 							</ul>
 						</nav>
 					</div>
-					<div class="header__actions">
-						<a href="#" class="header__button btn_hed button button_join">Join Us</a>
-						<button type="button" class="header__button button button_transparent">Log In</button>
+					<div class="header__actions actions-header">
+						<div class="actions-header__item">
+							<button type="button" class="actions-header__button button button_join">
+								<span>Join Us</span> <span class="_icon-arrow_left"></span>
+							</button>
+							<ul class="actions-header__sub-list">
+								<li class="actions-header__sub-item"><a href="#">Individual Membership</a></li>
+								<li class="actions-header__sub-item"><a href="#">Team Membership</a></li>
+								<li class="actions-header__sub-item actions-header__sub-item_log"></li>
+							</ul>
+						</div>
+						<div class="actions-header__item actions-header__item_log">
+							<a href="#" data-da=".actions-header__sub-item_log,992" class="actions-header__btn button button_transparent">Log In</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -103,7 +114,6 @@
 						</div>
 						<div class="content-main__actions" data-watch>
 							<a href="#" class="content-main__button button">Take Free Skills Assessment</a>
-							<a href="#" class="content-main__button button button_join btn_hidden">Join Us</a>
 						</div>
 					</div>
 					<div class="main__images images-main" data-watch>
@@ -125,17 +135,17 @@
 						</div>
 					</div>
 					<div class="counter__item">
-						<span data-digits-counter data-digits-counter-speed="2000" class="counter__title">4</span>
-						<div class="counter__text" data-watch>
-							<p>Certificates of Accreditation</p>
-						</div>
-					</div>
-					<div class="counter__item">
 						<span data-digits-counter data-digits-counter-speed="2000" class="counter__title counter__title_plus">
 							400
 						</span>
 						<div class="counter__text" data-watch>
 							<p>Active Community Members</p>
+						</div>
+					</div>
+					<div class="counter__item">
+						<span data-digits-counter data-digits-counter-speed="2000" class="counter__title">3</span>
+						<div class="counter__text" data-watch>
+							<p>Certificates of Accreditation</p>
 						</div>
 					</div>
 				</div>
@@ -590,15 +600,55 @@
 									<article class="stories__item item-stories">
 										<div class="item-stories__header header-stories">
 											<div class="header-stories__lable" data-swiper-parallax="-100">
-												<h3 class="header-stories__name small-title">Pix,</h3>
-												<div class="header-stories__position text _icon-quotes">
-													<p>Financial Analytic</p>
-												</div>
+												<h3 class="header-stories__name small-title">David</h3>
+												<div class="header-stories__position text _icon-quotes"></div>
 											</div>
 											<div class="header-stories__location small-text _icon-location" data-swiper-parallax="-500">England</div>
 										</div>
 										<div class="item-stories__text text " data-swiper-parallax="-800" data-swiper-parallax-opacity="0.1">
-											<p> I watch as many recordings of the sessions as I can, and I’ve been working my way through the accreditation programme slowly. No complaints - happy to be a part of it all and feel like there is so much more I can learn. Big thumbs up from me!</p>
+											<p>To anyone considering joining the Full Stack community, I can’t recommend it highly enough. Throw yourself at it; not just into the courses, but into the community as well because that’s what really differentiates Full Stack from other training courses.</p>
+										</div>
+									</article>
+								</div>
+								<div class="stories__slide swiper-slide">
+									<article class="stories__item item-stories">
+										<div class="item-stories__header header-stories">
+											<div class="header-stories__lable" data-swiper-parallax="-100">
+												<h3 class="header-stories__name small-title">Areeba</h3>
+												<div class="header-stories__position text _icon-quotes"></div>
+											</div>
+											<div class="header-stories__location small-text _icon-location" data-swiper-parallax="-500">Canada</div>
+										</div>
+										<div class="item-stories__text text " data-swiper-parallax="-800" data-swiper-parallax-opacity="0.1">
+											<p>The reason I joined FSM is because of Giles, Myles and Kenny. I’ve been following their work for many years and they’re amazing. They’re all really accessible and friendly guys.</p>
+										</div>
+									</article>
+								</div>
+								<div class="stories__slide swiper-slide">
+									<article class="stories__item item-stories">
+										<div class="item-stories__header header-stories">
+											<div class="header-stories__lable" data-swiper-parallax="-100">
+												<h3 class="header-stories__name small-title">Wikus</h3>
+												<div class="header-stories__position text _icon-quotes"></div>
+											</div>
+											<div class="header-stories__location small-text _icon-location" data-swiper-parallax="-500">South Africa</div>
+										</div>
+										<div class="item-stories__text text " data-swiper-parallax="-800" data-swiper-parallax-opacity="0.1">
+											<p>In every single aspect of the 3 levels - Excel Mastery, Advanced Financial Modelling, and the Tech Stack - there is so much that I don’t know, and there really is nothing I want to miss out on... It’s more of a tribe than a learning course. It really is the full package.</p>
+										</div>
+									</article>
+								</div>
+								<div class="stories__slide swiper-slide">
+									<article class="stories__item item-stories">
+										<div class="item-stories__header header-stories">
+											<div class="header-stories__lable" data-swiper-parallax="-100">
+												<h3 class="header-stories__name small-title">Doug</h3>
+												<div class="header-stories__position text _icon-quotes"></div>
+											</div>
+											<div class="header-stories__location small-text _icon-location" data-swiper-parallax="-500">England</div>
+										</div>
+										<div class="item-stories__text text " data-swiper-parallax="-800" data-swiper-parallax-opacity="0.1">
+											<p>I initially saw the investment in joining Full Stack Modeller as a formalisation of my existing knowledge but it’s turned out to be so much more. Excel is an amazingly flexible tool for business and the recent advances in its capabilities I’ve learned about in this first section of my journey have blown my head up 🤯and enthused me 🕺🏼in equal proportion.</p>
 										</div>
 									</article>
 								</div>
@@ -751,7 +801,7 @@
 									<p>Rethink how you build models in Excel</p>
 								</div>
 								<div class="courses-item__price price-courses">
-									<div class="price-courses__value price-courses__value_none"></div>
+									<div class="price-courses__value">ON REQUEST</div>
 									<div class="price-courses__deadline">Live, Virtual Training</div>
 								</div>
 								<a href="#" class="courses-item__button button">Find Out More</a>
@@ -775,162 +825,187 @@
 						</div>
 						<div data-tabs-body class="tabs-blog__content" data-watch data-watch-once>
 							<div class="tabs-blog__body">
-								<div class="tabs-blog__colunms">
+								<div class="tabs-blog__columns">
 									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/02.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/01.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+											</div>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>1</span> min to read</div>
+													<div class="item-blog__catigories">Sales</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
+											</div>
 										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">28 min to read</div>
-												<div class="item-blog__catigories">Sales</div>
-											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have...</p>
-											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
 									</article>
+
 									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/03.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/03.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+											</div>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>1</span> min to read</div>
+													<div class="item-blog__catigories">Sales</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
+											</div>
 										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">34 min to read</div>
-												<div class="item-blog__catigories">Sales</div>
-											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have...</p>
-											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
-									</article>
-								</div>
-							</div>
-							<div class="tabs-blog__body">
-								<div class="tabs-blog__colunms">
-									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/03.jpg" alt="A_Nightmare_on_Spread_Sheet" />
-										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">49 min to read</div>
-												<div class="item-blog__catigories">Community</div>
-											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have...</p>
-											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
 									</article>
 								</div>
 							</div>
 							<div class="tabs-blog__body">
-								<div class="tabs-blog__colunms">
+								<div class="tabs-blog__columns">
 									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/03.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/03.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+											</div>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>49</span> min to read</div>
+													<div class="item-blog__catigories">Community</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
+											</div>
 										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">46 min to read</div>
-												<div class="item-blog__catigories">Financial</div>
-											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have...</p>
-											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
-									</article>
-									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/01.jpg" alt="A_Nightmare_on_Spread_Sheet" />
-										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">31 min to read</div>
-												<div class="item-blog__catigories">Financial</div>
-											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have...</p>
-											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
-									</article>
-									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/02.jpg" alt="A_Nightmare_on_Spread_Sheet" />
-										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">8 min to read</div>
-												<div class="item-blog__catigories">Financial</div>
-											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have...</p>
-											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
 									</article>
 								</div>
 							</div>
 							<div class="tabs-blog__body">
-								<div class="tabs-blog__colunms">
+								<div class="tabs-blog__columns">
 									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/01.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/03.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+											</div>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>12</span> min to read</div>
+													<div class="item-blog__catigories">Financial</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
+											</div>
 										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">21 min to read</div>
-												<div class="item-blog__catigories">Tables</div>
-											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have...</p>
-											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
+
+
 									</article>
 									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/02.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/01.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+											</div>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>1</span> min to read</div>
+													<div class="item-blog__catigories">Financial</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
+											</div>
 										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">36 min to read</div>
-												<div class="item-blog__catigories">Tables</div>
-											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have...</p>
-											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
+
 									</article>
 									<article class="body-blog__item item-blog">
-										<a href="#" class="item-blog__image-ibg">
-											<img data-src="img/section/blog/03.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/02.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+											</div>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>28</span> min to read</div>
+													<div class="item-blog__catigories">Financial</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
+											</div>
 										</a>
-										<div class="item-blog__body">
-											<div class="item-blog__label">
-												<div class="item-blog__date small-text">1 min to read</div>
-												<div class="item-blog__catigories">Tables</div>
+									</article>
+								</div>
+							</div>
+							<div class="tabs-blog__body">
+								<div class="tabs-blog__columns">
+									<article class="body-blog__item item-blog">
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/01.jpg" alt="A_Nightmare_on_Spread_Sheet" />
 											</div>
-											<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
-											<div class="item-blog__text small-text">
-												<p>Our top 5 financial modelling errors, and how they could have top 5 financial modelling errors, and how they could have...</p>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>1</span> min to read</div>
+													<div class="item-blog__catigories">Tables</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
 											</div>
-											<a href="#" class="item-blog__link link">Read full article</a>
-										</div>
+										</a>
+									</article>
+									<article class="body-blog__item item-blog">
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/02.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+											</div>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>54</span> min to read</div>
+													<div class="item-blog__catigories">Tables</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
+											</div>
+										</a>
+									</article>
+									<article class="body-blog__item item-blog">
+										<a href="#" class="item-blog__link">
+											<div class="item-blog__image-ibg">
+												<img data-src="img/section/blog/03.jpg" alt="A_Nightmare_on_Spread_Sheet" />
+											</div>
+											<div class="item-blog__body">
+												<div class="item-blog__label">
+													<div class="item-blog__date small-text"><span>46</span> min to read</div>
+													<div class="item-blog__catigories">Tables</div>
+												</div>
+												<h3 class="item-blog__title small-title">A Nightmare on Spread Sheet</h3>
+												<div class="item-blog__text small-text">
+													<p>Our top 5 financial modelling errors, and how they could have...</p>
+												</div>
+												<span class="link">Read full article</span>
+											</div>
+										</a>
 									</article>
 								</div>
 							</div>
@@ -946,25 +1021,29 @@
 						</div>
 						<div class="contact__content">
 							<h2 class="contact__title title" data-watch>Contact Us</h2>
-							<form data-ajax data-dev class="contact__form" action="#" method="POST">
+							<form class="contact__form " data-form action="#" method="POST">
 								<div class="form__item">
 									<label for="input_name">Your Name</label>
-									<input id="input_name" type="text" oninput="this.value=this.value.replace(/[^a-zA-Z]/g,'')" name="form[name]" data-required data-error="you must enter your name" class="form__input form__input_name">
+									<span class="form__error"></span>
+									<input id="input_name" type="text" name="form[name]" data-required data-error="you must enter your name" class="form__input form__input_name">
 								</div>
 								<div class="form__item">
 									<label for="input_email">Your Email</label>
-									<input id="input_email" type="text" name="form[email]" data-required="email" data-error="you must enter your email" class="form__input form__input_email">
+									<span class="form__error"></span>
+									<input id="input_email" type="email" name="form[email]" data-required data-error="you must enter your email" class="form__input form__input_email">
 								</div>
 								<div class="form__item">
 									<label for="input_phone">Your Phone (optional)</label>
-									<input id="input_phone" type="tel" name="form[tel]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" data-error="Please, enter the correct phone number" class="form__input  form__input_phone">
+									<span class="form__error"></span>
+									<input id="input_phone" type="tel" name="form[tel]" oninput="this.value=this.value.replace(/[^\d\+\s\(\)\-]/g,'')" data-optional data-error="you must enter your email" class="form__input  form__input_phone">
 								</div>
 								<div class="form__item">
 									<label for="input_question">Your Question or Request</label>
-									<textarea id="input_question" data-validata data-required name="form[message]" data-error="please, enter a specific question or request" id="formMessage" class="form__input form__input_question"></textarea>
+									<span class="form__error"></span>
+									<textarea id="input_question" type="text" name="form[message]" data-required data-error="please, enter a specific question or request" class="form__input form__input_question"></textarea>
 								</div>
 								<div class="form__actions">
-									<button type="submit" class="form__button button button_contact">Submit</button>
+									<button type="submit" class="form__button button button_contact ">Submit</button>
 									<span class="form__succes _icon-succes">Your Request has been sent! We will call you soon.</span>
 								</div>
 							</form>
@@ -1018,7 +1097,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20230317181034"></script>
+	<script src="js/app.min.js?_v=20230403043735"></script>
 </body>
 
 </html>
