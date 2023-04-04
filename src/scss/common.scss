@@ -1,5 +1,4 @@
-/* ==========================================================
-=======================================================================================================*/
+/* =================================================================================================================================================================*/
 .page {
   padding-top: rem(64);
   // .page__main
@@ -129,9 +128,7 @@
   line-height: 150%;
   letter-spacing: 0.01em;
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: rem(6);
+  display: inline-flex;
   max-width: fit-content;
   &::after {
     content: '';
@@ -234,15 +231,14 @@
       display: inline-flex;
       align-items: center;
 
-      background: #f7f9ff;
+      background-color: #f7f9ff;
       border-radius: rem(100);
       padding: rem(8) rem(16);
     }
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
       display: flex;
     }
     @media (max-width: $mobileSmall) {
-      
       width: 100%;
     }
   }
@@ -682,7 +678,15 @@
   }
   // .about__title
   &__title {
-    @extend %slide-in-bottom-50;
+    overflow: hidden;
+    transform: translate(0px, 25%);
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    &._watcher-view {
+      transform: translate(0px, 0);
+      opacity: 1;
+      transition: all 0.8s ease 0.1s;
+    }
     margin-bottom: em(48, 48);
     text-align: left;
   }
@@ -889,6 +893,7 @@
   }
 }
 /*why ====================================================================================================*/
+/* illustration ====================================================================================================*/
 .illustration {
   @media (min-width: $tablet) {
     position: relative;
@@ -905,6 +910,53 @@
     }
   }
 }
+/* illustration ====================================================================================================*/
+
+/* pagging ====================================================================================================*/
+.pagging {
+  @include adaptiveValue('padding-bottom', 80, 20);
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(8);
+  }
+  // .pagging__list
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+  }
+
+  // .pagging__item
+
+  &__item {
+  }
+
+  // .pagging__link
+
+  &__link {
+    width: rem(32);
+    height: rem(32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease 0s;
+    &._active {
+      background-color: $orangeColor;
+      color: #fff;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $orangeColor;
+        color: #fff;
+      }
+    }
+  }
+}
+/* pagging ====================================================================================================*/
 /* =========================== Заголовки, загальні БЕМ блоки та інше... ===============================
 =======================================================================================================*/
 

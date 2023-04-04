@@ -3,7 +3,7 @@
 .events {
   // .events__container
   &__container {
-    @include adaptiveValue('padding-bottom', 80, 20);
+    @include adaptiveValue('padding-bottom', 48, 20);
   }
   // .events__columns
   &__columns {
@@ -23,7 +23,10 @@
     @media (max-width: $mobileSmall) {
       grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
     }
-    
+    @media (max-width: em(338)) {
+      margin-left: rem(-15);
+      margin-right: rem(-15);
+    }
   }
   // .events__item
   &__item {

@@ -1,7 +1,7 @@
-
 /* single-blog  ====================================================================================================*/
 
 .single-blog {
+  background-color: $whiteColor;
   @include adaptiveValue('padding-top', 56, 20);
   @include adaptiveValue('padding-bottom', 56, 20);
   // .single-blog__container
@@ -76,7 +76,9 @@
 
   // .single-blog__image-ibg
 
-  &__image-ibg {
+  &__image-ibg_contain {
+    @extend %slide-in-bottom-25;
+    overflow: hidden;
     min-width: 100%;
     padding-bottom: 29.354839%; /* 364/1240 */
     &:not(:last-child) {
@@ -158,87 +160,42 @@
   }
 }
 .body-article-blog {
-  // .body-article-blog__title
-
-  &__title {
-    
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: 700;
     line-height: 130%;
     letter-spacing: 0.01em;
     margin-bottom: rem(12);
-    // .body-article-blog__title_2
-
-    &_2 {
-      @include adaptiveValue('font-size', 40, 28);
-    }
-
-    // .body-article-blog__title_3
-
-    &_3 {
-      @include adaptiveValue('font-size', 32, 26);
-    }
-
-    // .body-article-blog__title_4
-
-    &_4 {
-      font-size: rem(24);
-      line-height: 140%;
-    }
-
-    // .body-article-blog__title_5
-
-    &_5 {
-      font-weight: 600;
-      font-size: rem(20);
-      line-height: 150%;
-    }
-
-    // .body-article-blog__title_6
-
-    &_6 {
-      font-weight: 400;
-      font-size: rem(18);
-      line-height: 150%;
-    }
   }
 
-  // .body-article-blog__image-ibg
-
-  &__image-ibg {
-
-    // .body-article-blog__image-ibg_contain
-    &_contain {
-      @media (min-width:$mobile){
-        width: 58.625%; /* 469/800 */
-        padding-bottom: 40.080645%;
-      }
-      @media (max-width:$mobile){
-        width: 100%;
-        padding-bottom: 62%;
-      }
-      
-      &:not(:last-child) {
-        margin-bottom: rem(32);
-      }
-    }
+  h2 {
+    @include adaptiveValue('font-size', 40, 28);
   }
-
-  // .body-article-blog__text
-
-  &__text {
-    &:not(:last-child) {
-      margin-bottom: rem(32);
-    }
-    p {
-      &:not(:last-child) {
-        margin-bottom: rem(24);
-      }
-    }
+  h3 {
+    @include adaptiveValue('font-size', 32, 26);
   }
-
-  // .body-article-blog__link
-
-  &__link {
+  h4 {
+    font-size: rem(24);
+    line-height: 140%;
+  }
+  h5 {
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: 150%;
+  }
+  h6 {
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: 150%;
+  }
+  img {
+    max-width: 100%;
+    max-height: rem(500);
+  }
+  a {
     display: inline-block;
     text-transform: uppercase;
     color: $blueColor;
@@ -269,32 +226,44 @@
       }
     }
   }
-
-  // .body-article-blog__quote
-
-  &__quote {
+  blockquote {
+    font-weight: 600;
+    @include adaptiveValue('font-size', 20, 16);
+    line-height: 150%;
+    letter-spacing: 0.01em;
     width: fit-content;
     position: relative;
     padding: rem(24) rem(56);
     background-color: $lightBlueColor;
     margin-bottom: rem(32);
-    span {
+    &::before {
+      @extend %ic;
+      content: '\e901';
+      font-size: rem(24);
+      color: $blueColor;
       position: absolute;
       width: 100%;
       height: 100%;
       top: rem(12);
       left: rem(12);
-      &::before{
-        font-size: rem(24);
-        color: $blueColor;
-      }
+    }
+  }
+  // .body-article-blog__text
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: rem(32);
     }
     p {
-      font-weight: 600;
-      @include adaptiveValue("font-size", 20, 16);
-      line-height: 150%;
-      letter-spacing: 0.01em;
+      &:not(:last-child) {
+        margin-bottom: rem(24);
+      }
     }
+  }
+
+  // .body-article-blog__quote
+
+  &__quote {
   }
 }
 .navigation-search {
@@ -309,36 +278,6 @@
   // .navigation-search__title
 
   &__title {
-  }
-}
-.article-sharing {
-  // .article-sharing__list
-
-  &__list {
-  }
-
-  // .article-sharing__item
-
-  &__item {
-  }
-
-  // .article-sharing__link
-
-  &__link {
-    // .article-sharing__link_facebook
-
-    &_facebook {
-    }
-
-    // .article-sharing__link_twitter
-
-    &_twitter {
-    }
-
-    // .article-sharing__link_linkedin
-
-    &_linkedin {
-    }
   }
 }
 

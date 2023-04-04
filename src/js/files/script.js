@@ -203,9 +203,64 @@ function form() {
 
 /* ==========================  Form  =====================================================
 =========================================================================================*/
+
+/* ===============================================================================
+================================ formSearch =========================================================*/
+
+function searchAndToggleSpollers(event) {
+  event.preventDefault();
+
+  const searchText = document.querySelector('.search-topics__search input').value;
+
+  const searchRegex = new RegExp(searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&'), 'gi');
+
+  console.log(searchRegex);
+  const spollers = document.querySelectorAll('.spollers__item');
+
+  // console.log(spollers);
+
+  spollers.forEach((spoller) => {
+    console.log(spoller);
+    const texts = spoller.querySelectorAll('[data-spoller]');
+    let matchFound = false;
+    console.log(texts);
+    texts.forEach((text) => {
+      if (searchRegex.test(text.textContent)) {
+        matchFound = true;
+        text.closest('[data-spoller]').classList.add('_spoller-active');
+        text.nextElementSibling.hidden = false;
+      } else {
+        text.closest('[data-spoller]').classList.remove('_spoller-active');
+        text.nextElementSibling.hidden = true;
+      }
+    });
+
+    if (!matchFound) {
+      spoller.classList.remove('_spoller-active');
+    }
+
+    const firstActiveSpoller = document.querySelector(
+      '.search-topics__content [data-spoller]._spoller-active',
+    );
+    if (firstActiveSpoller) {
+      const scrollToPosition =
+        firstActiveSpoller.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
+    }
+  });
+}
+
+/* formSearch ===============================================================================
+=========================================================================================*/
 window.addEventListener('load', function (e) {
   menuDropDown();
-  form();
+  if (document.querySelector('[data-form]')) {
+    form();
+  }
+  if (document.querySelector('.search-topics__search')) {
+    const formSearch = document.querySelector('.search-topics__search');
+    formSearch.addEventListener('submit', searchAndToggleSpollers);
+  }
 });
 /* ===============================================================================
 =========================================================================================*/
