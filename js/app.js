@@ -4578,9 +4578,47 @@
                 }));
             }));
         }
+        function handleSearch(event) {
+            event.preventDefault();
+            const searchInput = event.target.querySelector('input[type="text"]');
+            const searchQuery = searchInput.value.trim().toLowerCase();
+            const spollersAll = document.querySelectorAll("[data-spoller]");
+            const spollers = document.querySelectorAll(".spollers__item");
+            spollersAll.forEach((spoller => {
+                spoller.classList.remove("_spoller-active");
+                spoller.nextElementSibling.hidden = true;
+            }));
+            if ("" !== searchQuery) {
+                const spollerMatches = Array.from(spollers).filter((spoller => {
+                    const spollerTitle = spoller.querySelector(".spollers__title").textContent.trim().toLowerCase();
+                    const spollerText = spoller.querySelector(".spollers__text").textContent.trim().toLowerCase();
+                    return spollerTitle.includes(searchQuery) || spollerText.includes(searchQuery);
+                }));
+                spollerMatches.forEach((spoller => {
+                    spoller.classList.add("_spoller-active");
+                    const button = spoller.querySelector(".spollers__title");
+                    if (button && button.nextElementSibling.classList.contains("spollers__text")) {
+                        button.classList.add("_spoller-active");
+                        button.nextElementSibling.hidden = false;
+                    }
+                }));
+                if (spollerMatches.length > 0) {
+                    const topMatch = spollerMatches[0];
+                    const topMatchOffset = topMatch.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                        top: topMatchOffset - 100,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        }
         window.addEventListener("load", (function(e) {
             menuDropDown();
-            script_form();
+            if (document.querySelector("[data-form]")) script_form();
+            if (document.querySelector(".search-topics__search")) {
+                const formSearch = document.querySelector(".search-topics__search");
+                formSearch.addEventListener("submit", handleSearch);
+            }
         }));
         window["FLS"] = false;
         spollers();
