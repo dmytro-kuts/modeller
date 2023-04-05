@@ -200,57 +200,53 @@ function form() {
       });
   });
 }
-
 /* ==========================  Form  =====================================================
 =========================================================================================*/
 
 /* ===============================================================================
-================================ formSearch =========================================================*/
-
-function searchAndToggleSpollers(event) {
+================================ Form Search =========================================================*/
+function handleSearch(event) {
   event.preventDefault();
 
-  const searchText = document.querySelector('.search-topics__search input').value;
-
-  const searchRegex = new RegExp(searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&'), 'gi');
-
-  console.log(searchRegex);
+  const searchInput = event.target.querySelector('input[type="text"]');
+  const searchQuery = searchInput.value.trim().toLowerCase();
+  const spollersAll = document.querySelectorAll('[data-spoller]');
   const spollers = document.querySelectorAll('.spollers__item');
 
-  // console.log(spollers);
+  spollersAll.forEach((spoller) => {
+    spoller.classList.remove('_spoller-active');
+    spoller.nextElementSibling.hidden = true;
+  });
 
-  spollers.forEach((spoller) => {
-    console.log(spoller);
-    const texts = spoller.querySelectorAll('[data-spoller]');
-    let matchFound = false;
-    console.log(texts);
-    texts.forEach((text) => {
-      if (searchRegex.test(text.textContent)) {
-        matchFound = true;
-        text.closest('[data-spoller]').classList.add('_spoller-active');
-        text.nextElementSibling.hidden = false;
-      } else {
-        text.closest('[data-spoller]').classList.remove('_spoller-active');
-        text.nextElementSibling.hidden = true;
-      }
+  if (searchQuery !== '') {
+    const spollerMatches = Array.from(spollers).filter((spoller) => {
+      const spollerTitle = spoller
+        .querySelector('.spollers__title')
+        .textContent.trim()
+        .toLowerCase();
+      const spollerText = spoller.querySelector('.spollers__text').textContent.trim().toLowerCase();
+
+      return spollerTitle.includes(searchQuery) || spollerText.includes(searchQuery);
     });
 
-    if (!matchFound) {
-      spoller.classList.remove('_spoller-active');
-    }
+    spollerMatches.forEach((spoller) => {
+      spoller.classList.add('_spoller-active');
 
-    const firstActiveSpoller = document.querySelector(
-      '.search-topics__content [data-spoller]._spoller-active',
-    );
-    if (firstActiveSpoller) {
-      const scrollToPosition =
-        firstActiveSpoller.getBoundingClientRect().top + window.pageYOffset - 100;
-      window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
+      const button = spoller.querySelector('.spollers__title');
+
+      if (button && button.nextElementSibling.classList.contains('spollers__text')) {
+        button.classList.add('_spoller-active');
+        button.nextElementSibling.hidden = false;
+      }
+    });
+    if (spollerMatches.length > 0) {
+      const topMatch = spollerMatches[0];
+      const topMatchOffset = topMatch.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: topMatchOffset - 100, behavior: 'smooth' });
     }
-  });
+  }
 }
-
-/* formSearch ===============================================================================
+/* =============================== Form Search ================================================
 =========================================================================================*/
 window.addEventListener('load', function (e) {
   menuDropDown();
@@ -259,7 +255,7 @@ window.addEventListener('load', function (e) {
   }
   if (document.querySelector('.search-topics__search')) {
     const formSearch = document.querySelector('.search-topics__search');
-    formSearch.addEventListener('submit', searchAndToggleSpollers);
+    formSearch.addEventListener('submit', handleSearch);
   }
 });
 /* ===============================================================================

@@ -25,19 +25,20 @@
 
   &__button {
     position: absolute;
-    width: rem(17);
-    height: rem(17);
     top: 50%;
     left: rem(19);
     z-index: 2;
     transform: translate(0px, -50%);
     &::before {
-      transition: color 0.3s ease 0s;
+      font-weight: 500;
+      font-size: rem(20);
+      transition: all 0.3s ease 0s;
       color: #7d8897;
     }
-    @media (any-hover: hover){
-      &:hover{
+    @media (any-hover: hover) {
+      &:hover {
         &::before {
+          text-shadow: 0 0 5px rgba(11, 23, 39, 0.887);
           color: $mainColor;
         }
       }
@@ -49,15 +50,35 @@
   &__search {
     position: relative;
     margin-bottom: rem(20);
+    @media (max-width:$mobile){
+      min-width: 100%; 
+    }
   }
 
   // .search-topics__input
 
   &__input {
     @include adaptiveValue('width', 608, 280);
-    // position: relative;
     padding: rem(12) rem(16) rem(12) rem(48);
     background-color: $lightBlueColor;
+    position: relative;
+    transition: box-shadow 0.3s ease 0s;
+    border-radius: rem(8);
+    font-size: rem(24);
+    box-shadow: 0 0 5px rgba(5, 50, 214, 0.1);
+    @media (max-width:$mobile){
+      min-width: 100%; 
+    }
+    &::placeholder {
+      color: #7d8897;
+      font-size: rem(22);
+    }
+    &:focus {
+      box-shadow: 0 0 5px rgba(5, 50, 214, 0.6);
+    }
+    &:focus::placeholder {
+      opacity: 0;
+    }
   }
 
   // .search-topics__navigation
@@ -99,7 +120,7 @@
     transition: all 0.3s ease 0s;
     border: 1px solid $lightOrangeColor;
     background-color: $lightOrangeColor;
-    &._tag-active{
+    &._tag-active {
       background-color: #e39e90;
     }
     @media (any-hover: hover) {
@@ -114,12 +135,11 @@
   // .content-search__item
 
   &__item {
-    
   }
 }
 .item-content-search {
   &:not(:last-child) {
-    @include adaptiveValue("margin-bottom",88 , 30);
+    @include adaptiveValue('margin-bottom', 88, 30);
   }
   // .item-content-search__title
 
@@ -128,7 +148,6 @@
     font-size: 20px;
     line-height: 150%;
     color: $orangeColor;
-    
   }
 
   // .item-content-search__spollers
@@ -141,7 +160,7 @@
 
   &__item {
     text-align: left;
-    border-bottom: 1px solid #CFD4DA;
+    border-bottom: 1px solid #cfd4da;
   }
 
   // .spollers__title
