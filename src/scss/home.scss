@@ -1517,10 +1517,13 @@
   }
   // .tabs-blog__columns
   &__columns {
-    display: flex;
-    gap: rem(26);
-    @media (max-width: $tablet) {
-      flex-wrap: wrap;
+    display: grid;
+    gap: rem(24);
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(rem(352), 1fr));
+    }
+    @media (max-width: $mobileSmall) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
     }
     @media (max-width: em(338)) {
       margin-left: rem(-15);
