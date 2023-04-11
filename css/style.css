@@ -2901,10 +2901,9 @@ h6 {
 }
 
 .tabs-blog__columns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1.625rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
 }
 
 .item-blog {
@@ -5016,6 +5015,10 @@ h6 {
     transition: all 0.8s ease 0.1s;
   }
 
+  .tabs-blog__columns {
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  }
+
   .contact__container::after {
     content: "";
     position: absolute;
@@ -6941,11 +6944,6 @@ h6 {
             flex: 0 1 100%;
   }
 
-  .tabs-blog__columns {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-
   .contact__image-ibg {
     display: none;
   }
@@ -7357,6 +7355,10 @@ h6 {
   .menu__sub-list {
     left: 2%;
     right: 2%;
+  }
+
+  .tabs-blog__columns {
+    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
   }
 
   .actions__items {
